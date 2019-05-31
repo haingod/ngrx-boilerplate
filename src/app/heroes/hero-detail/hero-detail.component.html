@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Hero Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="saveHero(form)">
+      <div class="editfields">
+        <div [hidden]="addMode">
+          <mat-form-field>
+            <input matInput formControlName="id" placeholder="id" readonly>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput formControlName="first_name" placeholder="first_name" #name (keyup.esc)="close()" (keyup.enter)="saveHero(form)">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea matInput formControlName="email" placeholder="email" (keyup.esc)="close()"
+                      (keyup.enter)="saveHero(form)"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-spinner *ngIf="(isInsertingUser) || (isUpdatingUser);" mode="indeterminate" color="accent"></mat-spinner>
+      <button mat-raised-button color="accent" type="button" (click)="close()" matTooltip="Cancel all changes">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.pristine || form.invalid || (isInsertingUser) || (isUpdatingUser)" matTooltip="Save all changes">Save</button>
+    </form>
+  </mat-card-content>
+</mat-card>

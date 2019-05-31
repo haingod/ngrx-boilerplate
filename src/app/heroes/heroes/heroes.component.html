@@ -1,0 +1,32 @@
+<div class="control-panel">
+  <div class="button-panel">
+    <button mat-raised-button color="primary" type="button" (click)="getHeroes()" matTooltip="Refresh the heroes">Refresh</button>
+    <button mat-raised-button color="primary" type="button" (click)="enableAddMode()" *ngIf="!selected" matTooltip="Add a new hero">Add</button>
+  </div>
+</div>
+<div class="content-container">
+  <div class="list-container">
+    <mat-spinner *ngIf="loading$ | async;" mode="indeterminate" color="accent"></mat-spinner>
+    <div *ngIf="heroes$ | async as heroes">
+      <app-hero-list [heroes]="heroes" [selectedHero]="selected" (deleted)="delete($event)" (selected)="select($event)"></app-hero-list>
+      <div *ngIf="pageInfo$ | async as pageInfo">
+        <mat-paginator (page)="getPaginatorData($event)"
+                       [length]="pageInfo.total"
+                       [pageSize]="pageInfo.per_page"
+                       [hidePageSize]="true">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+  <div class="detail-container">
+    <app-hero-detail *ngIf="selected"
+                     [hero]="selected"
+                     (unselect)="close()"
+                     (add)="add($event)"
+                     (update)="update($event)"
+                     [isInsertingUser]="isInsertingUser$ | async"
+                     [isUpdatingUser]="isUpdatingUser$ | async"
+    >
+    </app-hero-detail>
+  </div>
+</div>
