@@ -8,6 +8,7 @@ import { VillainsComponent } from './villains/villains.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: VillainsComponent }
 ];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,8 +17,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports: [VillainsComponent],
-  declarations: [
-    VillainsComponent,
-  ],
+  declarations: [VillainsComponent]
 })
 export class VillainsModule {}

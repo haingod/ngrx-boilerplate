@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatIconModule,
   MatInputModule,
+  MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatTooltipModule,
-  MatDialogModule,
-  MatPaginatorModule
+  MatTooltipModule
 } from '@angular/material';
 
 @NgModule({

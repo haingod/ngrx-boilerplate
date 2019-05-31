@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-modal',
@@ -20,6 +20,7 @@ export class ModalComponent implements OnInit {
     this.onSubmit = data.onSubmit;
     this.isLoading$ = data.isLoading$;
   }
+
   ngOnInit() {}
 
   cancel() {

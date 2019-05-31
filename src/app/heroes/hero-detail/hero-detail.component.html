@@ -7,24 +7,64 @@
       <div class="editfields">
         <div [hidden]="addMode">
           <mat-form-field>
-            <input matInput formControlName="id" placeholder="id" readonly>
+            <label>
+              <input matInput formControlName="id" placeholder="id" readonly />
+            </label>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <input matInput formControlName="first_name" placeholder="first_name" #name (keyup.esc)="close()" (keyup.enter)="saveHero(form)">
+            <label>
+              <input
+                matInput
+                formControlName="first_name"
+                placeholder="first_name"
+                #name
+                (keyup.esc)="close()"
+                (keyup.enter)="saveHero(form)"
+              />
+            </label>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <textarea matInput formControlName="email" placeholder="email" (keyup.esc)="close()"
-                      (keyup.enter)="saveHero(form)"></textarea>
+            <label>
+              <textarea
+                matInput
+                formControlName="email"
+                placeholder="email"
+                (keyup.esc)="close()"
+                (keyup.enter)="saveHero(form)"
+              ></textarea>
+            </label>
           </mat-form-field>
         </div>
       </div>
-      <mat-spinner *ngIf="(isInsertingUser) || (isUpdatingUser);" mode="indeterminate" color="accent"></mat-spinner>
-      <button mat-raised-button color="accent" type="button" (click)="close()" matTooltip="Cancel all changes">Cancel</button>
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.pristine || form.invalid || (isInsertingUser) || (isUpdatingUser)" matTooltip="Save all changes">Save</button>
+      <mat-spinner
+        *ngIf="isInsertingUser || isUpdatingUser"
+        mode="indeterminate"
+        color="accent"
+      ></mat-spinner>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="close()"
+        matTooltip="Cancel all changes"
+      >
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="
+          form.pristine || form.invalid || isInsertingUser || isUpdatingUser
+        "
+        matTooltip="Save all changes"
+      >
+        Save
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { merge, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Hero } from '../../core';
 import { HeroService } from '../hero.service';
-import { distinctUntilChanged, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-heroes',
@@ -18,6 +17,7 @@ export class HeroesComponent implements OnInit {
   isUpdatingUser$: Observable<boolean>;
   JSON: any;
   apiUrl: string;
+
   constructor(private heroService: HeroService) {
     this.heroes$ = heroService.getAll();
     this.loading$ = heroService.getIsLoading();
@@ -62,6 +62,7 @@ export class HeroesComponent implements OnInit {
   update(hero: Hero) {
     this.heroService.updateOne(this.apiUrl, hero);
   }
+
   getPaginatorData(event) {
     this.heroService.loadAll(`${this.apiUrl}?page=${event.pageIndex + 1}`);
   }

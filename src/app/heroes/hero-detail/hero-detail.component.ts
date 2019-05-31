@@ -36,6 +36,7 @@ export class HeroDetailComponent implements OnChanges {
   });
 
   constructor(private fb: FormBuilder, private toastService: ToastService) {}
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hero) {
       this.setFocus();
@@ -48,8 +49,12 @@ export class HeroDetailComponent implements OnChanges {
       }
     }
     if (
-      (changes.isInsertingUser && (!changes.isInsertingUser.currentValue && changes.isInsertingUser.previousValue)) ||
-      (changes.isUpdatingUser && (!changes.isUpdatingUser.currentValue && changes.isUpdatingUser.previousValue))
+      (changes.isInsertingUser &&
+        (!changes.isInsertingUser.currentValue &&
+          changes.isInsertingUser.previousValue)) ||
+      (changes.isUpdatingUser &&
+        (!changes.isUpdatingUser.currentValue &&
+          changes.isUpdatingUser.previousValue))
     ) {
       setTimeout(() => {
         this.close();

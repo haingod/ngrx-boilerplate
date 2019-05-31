@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    AppModule,
+    AppModule
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {

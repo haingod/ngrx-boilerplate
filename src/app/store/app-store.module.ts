@@ -10,10 +10,10 @@ import { CommonEffects } from './entityStore/commonEffects';
 
 @NgModule({
   imports: [
-    StoreModule.forRoot({...testReducers, ...ajaxReducers}),
+    StoreModule.forRoot({ ...testReducers, ...ajaxReducers }),
     EffectsModule.forRoot([CommonEffects]),
     environment.production ? [] : StoreDevtoolsModule.instrument()
-  ],
+  ]
 })
 export class AppStoreModule {
   constructor() {}

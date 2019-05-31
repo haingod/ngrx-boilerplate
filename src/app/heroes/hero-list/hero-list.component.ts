@@ -25,6 +25,7 @@ export class HeroListComponent {
   isDeletingUser$: Observable<boolean>;
   dialogRef: any;
   JSON: any;
+
   constructor(public dialog: MatDialog, private heroService: HeroService) {
     this.JSON = JSON;
     this.isDeletingUser$ = heroService.getIsDeleting();
@@ -54,7 +55,7 @@ export class HeroListComponent {
       onSubmit: () => {
         this.deleted.emit(hero);
       },
-      isLoading$: this.isDeletingUser$,
+      isLoading$: this.isDeletingUser$
     };
 
     this.dialogRef = this.dialog.open(ModalComponent, dialogConfig);

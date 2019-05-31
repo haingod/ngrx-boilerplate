@@ -5,13 +5,10 @@ const {
   BEGIN_AJAX_CALL_SUFFIX,
   AJAX_CALL_SUCCEEDED_SUFFIX,
   AJAX_CALL_FAILED_SUFFIX,
-  AJAX_CALL_CANCELED_SUFFIX,
+  AJAX_CALL_CANCELED_SUFFIX
 } = AJAX_SUFFIXES;
 
-function reducer(
-  state = fromJS({}),
-  action: any
-): any {
+function reducer(state = fromJS({}), action: any): any {
   const indexOfDelimiter = action.type.lastIndexOf('_');
   const ajaxName = action.type.substring(0, indexOfDelimiter);
   const ajaxStatus = action.type.substring(indexOfDelimiter);
@@ -36,5 +33,5 @@ function reducer(
 }
 
 export default {
-  ajax: reducer,
-}
+  ajax: reducer
+};
