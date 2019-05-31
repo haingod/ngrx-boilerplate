@@ -40,6 +40,7 @@ export const reduxGenerator = featureName => {
   const args = reduce(
     actions,
     (acc, value) => {
+      // tslint:disable-next-line:no-shadowed-variable
       const handler = on(value, (state: Map<string, any>, { payload }) => {
         switch (value.type) {
           case EntityActionTypes.GET_ALL_SUCCEEDED:

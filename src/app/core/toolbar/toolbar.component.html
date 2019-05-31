@@ -4,19 +4,36 @@
       <a class="ng-title-icon" href="http://angular.io" target="_blank">
         <i></i>
       </a>
-      <span class="title">{{labTitle}}</span>
+      <span class="title">{{ labTitle }}</span>
       <span></span>
-      <a mat-button [routerLink]="['/heroes']" routerLinkActive="router-link-active">
-        <span>Heroes</span>
+      <a
+        mat-button
+        [routerLink]="['/heroes']"
+        routerLinkActive="router-link-active"
+      >
+        <span>{{ 'Heroes' | translate }}</span>
       </a>
-      <a mat-button [routerLink]="['/villains']" routerLinkActive="router-link-active">
-        <span>Villains</span>
+      <a
+        mat-button
+        [routerLink]="['/villains']"
+        routerLinkActive="router-link-active"
+      >
+        <span>{{ 'Villains' | translate }}</span>
       </a>
+    </div>
+    <span class="example-spacer"></span>
+    <div>
+      <img
+        class="first-language"
+        src="assets/images/vietnam.png"
+        (click)="changeLang('vn')"
+      />
+      <img src="assets/images/us.png" (click)="changeLang('en')" />
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row class="row-commands">
     <div class="footer-container">
-      <span class="spacer">{{labState}}</span>
+      <span class="spacer">{{ labState }}</span>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

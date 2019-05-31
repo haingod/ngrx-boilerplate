@@ -7,7 +7,7 @@
       (click)="getHeroes()"
       matTooltip="Refresh the heroes"
     >
-      Refresh
+      {{ 'Refresh' | translate }}
     </button>
     <button
       mat-raised-button
@@ -17,7 +17,7 @@
       *ngIf="!selected"
       matTooltip="Add a new hero"
     >
-      Add
+      {{ 'Add' | translate }}
     </button>
   </div>
 </div>

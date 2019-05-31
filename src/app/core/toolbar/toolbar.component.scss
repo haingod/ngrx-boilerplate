@@ -1,5 +1,11 @@
 @import '../../../styles/mixin';
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+.first-language {
+  margin-right: 8px;
+}
 .pull-right {
   position: fixed !important;
   right: 8px;

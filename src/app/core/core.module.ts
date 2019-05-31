@@ -6,12 +6,14 @@ import { SharedModule } from '../shared/shared.module';
 import { ModalComponent } from './modal/modal.component';
 import { throwIfAlreadyLoaded } from './module-import-check';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LanguageTranslationModule } from './language-translation.module';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     MaterialModule,
+    LanguageTranslationModule,
     RouterModule // because we use <router-outlet> and routerLink
   ],
   declarations: [ModalComponent, ToolbarComponent],
