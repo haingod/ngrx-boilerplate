@@ -12,11 +12,14 @@ import {
   TranslateModule,
   TranslateService
 } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 
 // ngx-translate - required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new MultiTranslateHttpLoader(http, [
+    { prefix: 'assets/translate/header/', suffix: '.json' },
+    { prefix: 'assets/translate/dashboard/', suffix: '.json' }
+  ]);
 }
 
 @NgModule({

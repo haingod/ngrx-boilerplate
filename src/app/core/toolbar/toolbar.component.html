@@ -4,7 +4,7 @@
       <a class="ng-title-icon" href="http://angular.io" target="_blank">
         <i></i>
       </a>
-      <span class="title">{{ labTitle }}</span>
+      <span class="title">{{ labTitle | translate }}</span>
       <span></span>
       <a
         mat-button
@@ -33,7 +33,7 @@
   </mat-toolbar-row>
   <mat-toolbar-row class="row-commands">
     <div class="footer-container">
-      <span class="spacer">{{ labState }}</span>
+      <span class="spacer">{{ labState | translate }}</span>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
