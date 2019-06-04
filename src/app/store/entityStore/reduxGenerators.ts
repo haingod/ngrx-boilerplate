@@ -119,7 +119,13 @@ export const reduxGenerator = featureName => {
       state => state[featureName].getIn(['items', 'total']),
       state => state[featureName].getIn(['items', 'total_pages']),
       state => state[featureName].getIn(['items', 'per_page']),
-      (total, total_pages, per_page) => ({ total, total_pages, per_page })
+      state => state[featureName].getIn(['items', 'page']) - 1,
+      (total, total_pages, per_page, page) => ({
+        total,
+        total_pages,
+        per_page,
+        page
+      })
     ),
     items: createSelector(
       selectState,

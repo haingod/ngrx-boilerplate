@@ -59,7 +59,7 @@ export class HeroDetailComponent implements OnChanges {
       setTimeout(() => {
         this.close();
         this.toastService.openSnackBar('OK', 'SUCCEEDED');
-      }, 0);
+      });
     }
   }
 
@@ -83,7 +83,9 @@ export class HeroDetailComponent implements OnChanges {
   }
 
   setFocus() {
-    this.nameElement.nativeElement.focus();
+    setTimeout(() => {
+      this.nameElement.nativeElement.focus();
+    });
   }
 
   updateHero(form: FormGroup) {

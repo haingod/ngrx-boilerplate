@@ -9,29 +9,29 @@ export class EntityService {
   ) {}
 
   // Connect select to store
-  public getAll() {
+  get items() {
     return this.store
       .select(this.selectors.items)
       .pipe(map(item => item && item.toJS()));
   }
 
-  public getIsDeleting() {
+  get isDeleting() {
     return this.store.select(this.selectors.isDeleting);
   }
 
-  public getIsInserting() {
+  get isInserting() {
     return this.store.select(this.selectors.isInserting);
   }
 
-  public getIsUpdating() {
+  get isUpdating() {
     return this.store.select(this.selectors.isUpdating);
   }
 
-  public getIsLoading() {
+  get isLoadingItems() {
     return this.store.select(this.selectors.isLoadingItems);
   }
 
-  public getPageInfo() {
+  get pageInfo() {
     return this.store.select(this.selectors.pageInfo);
   }
 

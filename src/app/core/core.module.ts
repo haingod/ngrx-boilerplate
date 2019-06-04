@@ -7,6 +7,7 @@ import { ModalComponent } from './modal/modal.component';
 import { throwIfAlreadyLoaded } from './module-import-check';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LanguageTranslationModule } from './language-translation.module';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   imports: [
@@ -16,9 +17,9 @@ import { LanguageTranslationModule } from './language-translation.module';
     LanguageTranslationModule,
     RouterModule // because we use <router-outlet> and routerLink
   ],
-  declarations: [ModalComponent, ToolbarComponent],
+  declarations: [ModalComponent, ToolbarComponent, LoadingComponent],
   exports: [ToolbarComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [ModalComponent, LoadingComponent]
 })
 export class CoreModule {
   constructor(

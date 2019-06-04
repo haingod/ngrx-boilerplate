@@ -28,7 +28,7 @@ export class HeroListComponent {
 
   constructor(public dialog: MatDialog, private heroService: HeroService) {
     this.JSON = JSON;
-    this.isDeletingUser$ = heroService.getIsDeleting();
+    this.isDeletingUser$ = heroService.isDeleting;
     this.isDeletingUser$.pipe(distinctUntilChanged()).subscribe(val => {
       if (!val && this.dialogRef) {
         this.dialogRef.close();

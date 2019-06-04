@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroService } from './hero.service';
 import { HeroesComponent } from './heroes/heroes.component';
+import { MaterialModule } from '../material/material.module';
+import { LoadingDirective } from '../core/loading/loading.directive';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HeroesComponent }
@@ -20,7 +21,12 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports: [HeroesComponent, HeroDetailComponent],
-  declarations: [HeroesComponent, HeroDetailComponent, HeroListComponent],
+  declarations: [
+    HeroesComponent,
+    HeroDetailComponent,
+    HeroListComponent,
+    LoadingDirective
+  ],
   providers: [HeroService]
 })
 export class HeroesModule {}

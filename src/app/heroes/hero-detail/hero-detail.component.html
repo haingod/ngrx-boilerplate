@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *appLoading="isInsertingUser || isUpdatingUser">
   <mat-card-header>
     <mat-card-title>Hero Details</mat-card-title>
   </mat-card-header>
@@ -40,11 +40,6 @@
           </mat-form-field>
         </div>
       </div>
-      <mat-spinner
-        *ngIf="isInsertingUser || isUpdatingUser"
-        mode="indeterminate"
-        color="accent"
-      ></mat-spinner>
       <button
         mat-raised-button
         color="accent"
@@ -58,9 +53,7 @@
         mat-raised-button
         color="primary"
         type="submit"
-        [disabled]="
-          form.pristine || form.invalid || isInsertingUser || isUpdatingUser
-        "
+        [disabled]="form.pristine || form.invalid"
         matTooltip="Save all changes"
       >
         Save

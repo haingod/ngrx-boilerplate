@@ -21,13 +21,8 @@
     </button>
   </div>
 </div>
-<div class="content-container">
+<div class="content-container" *appLoading="loading$ | async">
   <div class="list-container">
-    <mat-spinner
-      *ngIf="loading$ | async"
-      mode="indeterminate"
-      color="accent"
-    ></mat-spinner>
     <div *ngIf="heroes$ | async as heroes">
       <app-hero-list
         [heroes]="heroes"
@@ -40,6 +35,7 @@
           (page)="getPaginatorData($event)"
           [length]="pageInfo.total"
           [pageSize]="pageInfo.per_page"
+          [pageIndex]="pageInfo.page"
           [hidePageSize]="true"
         >
         </mat-paginator>

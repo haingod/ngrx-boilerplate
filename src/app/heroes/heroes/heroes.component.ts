@@ -19,11 +19,11 @@ export class HeroesComponent implements OnInit {
   apiUrl: string;
 
   constructor(private heroService: HeroService) {
-    this.heroes$ = heroService.getAll();
-    this.loading$ = heroService.getIsLoading();
-    this.pageInfo$ = heroService.getPageInfo();
-    this.isInsertingUser$ = heroService.getIsInserting();
-    this.isUpdatingUser$ = heroService.getIsUpdating();
+    this.heroes$ = heroService.items;
+    this.loading$ = heroService.isLoadingItems;
+    this.pageInfo$ = heroService.pageInfo;
+    this.isInsertingUser$ = heroService.isInserting;
+    this.isUpdatingUser$ = heroService.isUpdating;
 
     this.apiUrl = 'https://reqres.in/api/users';
     this.JSON = JSON;
