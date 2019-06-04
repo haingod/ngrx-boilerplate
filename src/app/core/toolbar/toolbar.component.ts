@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class ToolbarComponent {
   labTitle = this.translate.instant('app.title');
   labState = this.translate.instant('app.description');
+  date = new Date();
   constructor(private translate: TranslateService) {}
   changeLang(language: string) {
     this.translate.use(language);

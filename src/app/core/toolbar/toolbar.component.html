@@ -22,7 +22,10 @@
       </a>
     </div>
     <span class="example-spacer"></span>
-    <div>
+    <div style="display: flex">
+      <span style="margin-right: 7px">{{
+        date | localizedDate: 'fullDate'
+      }}</span>
       <img
         class="first-language"
         src="assets/images/vietnam.png"
@@ -33,6 +36,7 @@
   </mat-toolbar-row>
   <mat-toolbar-row class="row-commands">
     <div class="footer-container">
+      <span>{{ 10000.112312 | localizedNumber }} ------</span>
       <span class="spacer">{{ labState | translate }}</span>
     </div>
   </mat-toolbar-row>

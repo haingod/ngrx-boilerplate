@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { registerLocaleData } from '@angular/common';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { AppStoreModule } from './store/app-store.module';
+
+import localeVn from '@angular/common/locales/vi';
+registerLocaleData(localeVn, 'vn');
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'heroes' },
